@@ -11,8 +11,8 @@ def get_reddit_posts(subreddits, stock_symbol, limit=100, days=30):
         client_id="gqsZTfPeXWiDp4tzVvUaIw",
         client_secret="9EVIT1W1KrXhrCCguYvO0TqcpXwpHQ",
         user_agent="ashu llm",
-        password="Ashu@1510",
-        username="ashutosh1510",
+        password="<>",
+        username="<>",
     )
     posts = []
 
