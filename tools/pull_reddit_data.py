@@ -8,8 +8,8 @@ def get_reddit_posts(subreddits, stock_symbol, limit=100, days=30):
     Get posts from a specific subreddit containing the stock symbol within the last specified days.
     """
     reddit = praw.Reddit(
-        client_id="gqsZTfPeXWiDp4tzVvUaIw",
-        client_secret="9EVIT1W1KrXhrCCguYvO0TqcpXwpHQ",
+        client_id="<>",
+        client_secret="<>",
         user_agent="ashu llm",
         password="<>",
         username="<>",
