@@ -1,22 +1,25 @@
 import requests
 from bs4 import BeautifulSoup
+from langchain_core.tools import tool
 
-url = "https://www.moneycontrol.com/news/business/stocks/"
-response = requests.get(url)
+@tool
+def get_news():
+    """
+    This tool scrapes top headlines and detailed news content related to the stock market, companies, economy, and business
+    published today on Moneycontrol.com. It is designed to provide real-time news data for downstream summarisation and analysis
+    agents in a financial trading system.
+    """
 
-soup = BeautifulSoup(response.content, "lxml")
-# print(soup.prettify())
-tags=soup.find_all('p')
-for tag in tags :
-    if (str(type(tag.string)) == "<class 'bs4.element.NavigableString'>"
-            and len(tag.string) > 35):
-        print(tag.string)
-# news_section = soup.find('section', class_='startup-news section')
-#
-# news_headlines = []
-# for news_item in news_section.find_all('h3', class_='related_des'):
-#     headline = news_item.text.strip()
-#     news_headlines.append(headline)
-#
-# for i, headline in enumerate(news_headlines, start=1):
-#     print(f"{i}. {headline}")
+    url = "https://www.moneycontrol.com/news/business/stocks/"
+    response = requests.get(url)
+
+    soup = BeautifulSoup(response.content, "lxml")
+    # print(soup.prettify())
+    tags=soup.find_all('p')
+    news=[]
+    for tag in tags :
+        if (str(type(tag.string)) == "<class 'bs4.element.NavigableString'>"
+                and len(tag.string) > 35):
+            news.append(tag.string)
+            news.append("###")
+    return str(news)

@@ -9,11 +9,14 @@ end_date = '2025-05-31'
 stock = yf.Ticker(symbol)
 print(stock.info)
 
-data = stock.history(start=start_date, end=end_date)
+print(stock.quarterly_income_stmt[['2025-06-30', '2025-03-31']])
 
-data['20_Day_MA'] = data['Close'].rolling(window=20).mean()
 
-data['Daily_Return'] = data['Close'].pct_change() * 100
-
-print(data.columns)
-print(data)
+# data = stock.history(start=start_date, end=end_date)
+#
+# data['20_Day_MA'] = data['Close'].rolling(window=20).mean()
+#
+# data['Daily_Return'] = data['Close'].pct_change() * 100
+#
+# print(data.columns)
+# print(data["Volume"])
