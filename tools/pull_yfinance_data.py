@@ -2,14 +2,14 @@ import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
 
-symbol = 'RELIANCE.NS'
+symbol = 'ABB.NS'
 start_date = '2024-01-01'
 end_date = '2025-05-31'
 
 stock = yf.Ticker(symbol)
 print(stock.info)
 
-print(stock.quarterly_income_stmt[['2025-06-30', '2025-03-31']])
+print(stock.quarterly_income_stmt)
 
 
 # data = stock.history(start=start_date, end=end_date)

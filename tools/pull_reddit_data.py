@@ -8,11 +8,11 @@ def get_reddit_posts(subreddits, stock_symbol, limit=100, days=30):
     Get posts from a specific subreddit containing the stock symbol within the last specified days.
     """
     reddit = praw.Reddit(
-        client_id="<>",
-        client_secret="<>",
+        client_id="gqsZTfPeXWiDp4tzVvUaIw",
+        client_secret="9EVIT1W1KrXhrCCguYvO0TqcpXwpHQ",
         user_agent="ashu llm",
-        password="<>",
-        username="<>",
+        password="Ashu@1510",
+        username="ashutosh1510",
     )
     posts = []
 
@@ -27,5 +27,5 @@ def get_reddit_posts(subreddits, stock_symbol, limit=100, days=30):
                 posts.append(post.title)
     return posts
 subreditlist=['wallstreetbets','StockMarket_Update', 'stocks', 'investing','personalfinance','StockMarket']
-x=get_reddit_posts(subreditlist,"appl")
+x=get_reddit_posts(subreditlist,"TSLA")
 print(x)

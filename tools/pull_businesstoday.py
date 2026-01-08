@@ -36,6 +36,7 @@ These markers allow downstream agents to identify which topic the scraped conten
           "stocknews1":"https://www.businesstoday.in/markets/company-stock",
           "stocknews2":"https://www.businesstoday.in/markets/stocks",
           "stocknews3":"https://www.moneycontrol.com/news/business/stocks/"
+          # "stocknews4":"https://economictimes.indiatimes.com/markets/stocks/recos/"
           }
     result = []
     for key in URLS:
@@ -61,3 +62,7 @@ These markers allow downstream agents to identify which topic the scraped conten
     return str(result)
 
 # print(get_topic_news())
+# import feedparser
+# url="https://b2b.economictimes.indiatimes.com/rss/recentstories"
+# x=feedparser.parse(url)
+# print(x)
